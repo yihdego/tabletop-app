@@ -1,6 +1,6 @@
-class CreateParticipants < ActiveRecord::Migration
+class CreateParticipates < ActiveRecord::Migration
   def change
-    create_table :participants do |t|
+    create_table :participates do |t|
       t.belongs_to :user
       t.belongs_to :event
 
