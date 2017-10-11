@@ -14,13 +14,9 @@ describe User do
     it 'has event it admins' do
       expect(user.admined_events).to eq([event])
     end
-    xit 'has event it participates' do
-      p "*" * 40
-      p user.events
-      p second_event.users
+    it 'has event it participates' do
       second_event.users << user
-      p second_event.users
-      p user.events
+      user.reload
       expect(user.events).to include(second_event)
     end
   end

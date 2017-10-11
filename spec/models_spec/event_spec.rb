@@ -15,10 +15,10 @@ describe User do
     it 'has no particpants' do
       expect(event.participates).to eq([])
     end
-    xit 'has participants' do
-      event.participants << some_user
-      event.participants << some_else
-      exepct(event.participants).to eq([some_user, some_else])
+    it 'has participants' do
+      event.users << some_user
+      event.users << some_else
+      expect(event.users).to eq([some_user, some_else])
     end
   end
 
