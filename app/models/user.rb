@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include BCrypt
   has_many :admined_events, foreign_key: :admin_id, class_name: :Event
   has_many :participates
   has_many :events, through: :participates

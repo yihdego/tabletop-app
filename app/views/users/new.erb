@@ -1,6 +1,31 @@
-<form class="new_event" action="/users" method="post">
-  <input type="text" name="user_details[username]" placeholder="Username">
-  <input type="email" name="user_details[email]" placeholder="Email">
-  <input type="password" name="password" placeholder="Password">
-  <button>Submit</button>
-</form>
+<div id="signup">
+  <h1>Sign Up for Free</h1>
+
+  <form action="/users" method="post">
+
+  <div class="field-wrap">
+    <label>
+      Username<span class="req">*</span>
+    </label>
+    <input type="text" name="user_details[username]" required autocomplete="off" />
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Email Address<span class="req">*</span>
+    </label>
+    <input type="email" name="user_details[email]" required autocomplete="off"/>
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Set A Password<span class="req">*</span>
+    </label>
+    <input type="password" name="password" required autocomplete="off"/>
+  </div>
+
+  <button type="submit" class="button button-block"/>Get Started</button>
+
+  </form>
+
+</div>
