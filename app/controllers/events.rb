@@ -4,7 +4,7 @@ end
 
 post '/events' do
   @event = Event.create(params[:event_details])
-  @event.admin = session[:user_id]
+  @event.admin = User.find(session[:user_id])
   redirect "/events/#{@event.id}"
 end
 

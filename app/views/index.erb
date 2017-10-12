@@ -1,6 +1,8 @@
-<p><a href="/users/new">Make an Account</a></p>
-<p><a href="/events/new">Create an Event</a></p>
-
+<% if session[:user_id] %>
+  <p><a href="/events/new">Create an Event</a></p>
+<% else %>
+  <p><a href="/users/new">Make an Account</a></p>
+<% end %>
 <form class="search-events" action="/" method="get">
   <input type="text" name="search" placeholder="Find an Event">
   <button>Search for Events</button>
@@ -9,4 +11,8 @@
   <% @events.each do |event| %>
     <p> <a href="/events/<%=event.id%>"><%= event.name %></a></p>
   <% end %>
+<% else %>
+  <% Event.where("created_at > ?", 7.days.ago).reverse.each do |event| %>
+    <p> <a href="/events/<%=event.id%>"><%= event.name %></a></p>
+    <% end %>
 <% end %>

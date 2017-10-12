@@ -21,5 +21,17 @@
   </form>
 </div>
 
-<label for="RSVP">Join Event</label>
-<button class="join-button">RSVP</button>
+<div class="participants">
+  <p>Participants:</p>
+  <ul class="list-participants">
+    <% @event.users.reverse.each do |participant| %>
+      <li class="participant-name"><%= participant.username %> </li>
+    <% end %>
+  </ul>
+  <% if session[:user_id] %>
+    <label for="RSVP">Join Event</label>
+    <form action="/events/<%=@event.id%>/participates" method="post">
+      <button class="join-button">RSVP</button>
+    </form>
+  <% end %>
+</div>

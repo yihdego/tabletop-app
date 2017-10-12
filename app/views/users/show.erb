@@ -1,4 +1,14 @@
 <h2><%= @user.username %></h2>
-<p>Events Created: <%= @user.admined_events %></p>
-<p>Events Participated <%= @user.events %></p>
+<div class="user-admined">
+  <label>Events Created:</label>
+  <%@user.admined_events.each do |event| %>
+    <li><%= event.name %></li>
+  <% end %>
+</div>
+<div class="user-participates">
+  <label>Events Participated:</label>
+  <%@user.events.each do |event| %>
+    <li><a href="/events/<%= event.id %><"><%= event.name %></a></li>
+  <% end %>
+</div>
 <p>Hobbies: tbd</p>
