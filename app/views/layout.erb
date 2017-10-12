@@ -28,6 +28,7 @@
         <li><a href="/sessions/new">Log In</a></li>
       <% else %>
         <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
+        <li><%= erb :'/sessions/_logout', layout: false %></li>
       <% end %>
     </ul>
   </div>
