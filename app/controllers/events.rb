@@ -3,7 +3,7 @@ get '/events/new' do
 end
 
 post '/events' do
-  @event = Event.create(params[:event_details])
+  @event = Event.create(params[:event_details], password: params[:password])
   @event.admin = session[:user_id]
   redirect "/events/#{@event.id}"
 end
