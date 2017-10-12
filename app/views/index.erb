@@ -1,12 +1,13 @@
+<h2 class="site-logo">Looking for Table</h2>
 <% if session[:user_id] %>
   <p><a href="/events/new">Create an Event</a></p>
-<% else %>
-  <p><a href="/users/new">Make an Account</a></p>
 <% end %>
-<form class="search-events" action="/" method="get">
-  <input type="text" name="search" placeholder="Find an Event">
-  <button>Search for Events</button>
-</form>
+<div class="form__field">
+  <form class="search" action="/" method="get">
+    <input type="text" name="search" placeholder="Find an Event">
+    <input type="submit" value="Search" class="button">
+  </form>
+</div>  
 <% if @events %>
   <% @events.each do |event| %>
     <p> <a href="/events/<%=event.id%>"><%= event.name %></a></p>

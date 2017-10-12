@@ -19,8 +19,7 @@
   <title>Looking for Table</title>
 </head>
 <body>
-  <div class="tab-content">
-    <h1 class="title">Looking for Table</h1>
+  <nav>
     <ul class="tab-group">
       <li><a href="/">Home</a></li>
       <% if !session[:user_id] %>
@@ -31,8 +30,10 @@
         <li><%= erb :'/sessions/_logout', layout: false %></li>
       <% end %>
     </ul>
+  </nav>
+  <div class="site">
+    <%= yield %>
   </div>
-  <%= yield %>
   <footer></footer>
 </body>
 </html>

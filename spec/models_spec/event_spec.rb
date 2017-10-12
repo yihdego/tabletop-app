@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe User do
+describe Event do
   let(:event) { Event.create(name: 'Cube Night')}
   let(:user) { User.create(username: 'yihdego')}
   let(:some_user) { User.create(username: 'somebody')}
