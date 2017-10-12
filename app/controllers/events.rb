@@ -9,6 +9,6 @@ post '/events' do
 end
 
 get '/events/:id' do
-  @event = params[:id]
+  @event = Event.find(params[:id])
   erb :'/events/show'
 end
