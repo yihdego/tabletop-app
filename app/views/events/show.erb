@@ -8,11 +8,15 @@
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAUM3Qn7yImREfTHzdUEQ9xR982FRwLMCA&q=<%= @event.location %>" allowfullscreen>
 </iframe>
 </div>
-<p>Description <%= @event.description %></p>
+<p>Description: <%= @event.description %></p>
 <p>Time: <%= @event.time.strftime('%v %r')%></p>
+<p>Tags: <% @event.tags.each do |tag| %>
+  <%=tag.name%>
+<% end %></p>
 <div class="tag-edit">
-  <form class="add-tag" action="/events/:id" method="post">
+  <form class="add-tag" action="/events/<%=@event.id%>" method="post">
     <input type="hidden" name="_method" value="put">
     <input type="text" name="tag_name" placeholder="Add a Tag"="">
+    <button>Add</button>
   </form>
 </div>
