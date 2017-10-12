@@ -16,7 +16,7 @@ end
 put '/events/:id' do
   @event = Event.find(params[:id])
   @tag = Tag.find_by(name: params[:tag_name])
-  if @tag = nil
+  if @tag == nil
     @tag = Tag.create(name: params[:tag_name])
     @event.tags << @tag
   else

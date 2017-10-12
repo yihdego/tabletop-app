@@ -2,3 +2,9 @@
 <p>Location: <%= @event.location %></p>
 <p>Description <%= @event.description %></p>
 <p>Time: <%= @event.time.strftime('%v %r')%></p>
+<div class="tag-edit">
+  <form class="add-tag" action="/events/:id" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="tag_name" placeholder="Add a Tag"="">
+  </form>
+</div>
