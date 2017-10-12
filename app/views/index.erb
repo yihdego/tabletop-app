@@ -1,0 +1,12 @@
+<p><a href="/users/new">Make an Account</a></p>
+<p><a href="/events/new">Create an Event</a></p>
+
+<form class="search-events" action="/" method="get">
+  <input type="text" name="search" placeholder="Find an Event">
+  <button>Search for Events</button>
+</form>
+<% if @events %>
+  <% @events.each do |event| %>
+    <p> <a href="/events/<%=event.id%>"><%= event.name %></a></p>
+  <% end %>
+<% end %>
