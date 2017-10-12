@@ -1,4 +1,12 @@
 <h2><%= @event.name %></h2>
-<p>Location: <%= @event.location %></p>
+<div class="event-location">
+  <p>Location: <%= @event.location %></p>
+  <iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAUM3Qn7yImREfTHzdUEQ9xR982FRwLMCA&q=<%= @event.location %>" allowfullscreen>
+</iframe>
+</div>
 <p>Description <%= @event.description %></p>
 <p>Time: <%= @event.time.strftime('%v %r')%></p>
